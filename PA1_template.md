@@ -56,7 +56,7 @@ Thus, take the subset with complete data, stored in goodata
 goodata <- subset(dataset, !is.na(dataset$steps))
 ```
 
-Check the dimision of goodata
+Check the dimensions of goodata
 
 ```r
 dim(goodata)
