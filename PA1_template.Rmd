@@ -37,15 +37,8 @@ Get unique days in goodata
 uniquedate <- unique(goodata$date)
 ```
 Generate the histogram of the total number of steps for each day
-```{r, echo = TRUE}
-win.graph(width = 10, height = 4)
+```{r totalvsdatewthtna, echo = TRUE}
 barplot(stepsperday, main="Histogram of Total Number of Steps vs. Date (Ignore NAs)", ylab = "Total Number of Steps", names.arg=uniquedate, cex.names=0.8, cex.axis = 0.6, cex.lab = 1, space=c(0,0), las=2)
-```
-Save the graph, named as 'totalvsdatewthtna.png'
-```{r, echo = TRUE}
-png("totalvsdatewthtna.png", width=640, height=480)
-barplot(stepsperday, main="Histogram of Total Number of Steps vs. Date (Without NAs)", ylab = "Total Number of Steps", names.arg=uniquedate, cex.names=0.8, cex.axis = 0.6, cex.lab = 1, space=c(0,0), las=2)
-dev.off()
 ```
 Output the mean step and median step across all days
 ```{r, echo = TRUE}
@@ -70,14 +63,8 @@ Get interval levels
 interval <- levels(as.factor(goodata$interval))
 ```
 Generate the time series for the average steps of each interval accross all days
-```{r, echo = TRUE}
+```{r meanstepvsintervalnna, echo = TRUE}
 plot(interval, meanstepitvl, type = "l", xlab = "Interval", ylab = "Mean Number of Steps across All Days ", main = "Mean Number of Steps across All Days vs. Interval (Without NAs)")
-```
-Save the graph, named as 'meanstepvsintervalnna.png'
-```{r, echo = TRUE}
-png("meanstepvsintervalnna.png")
-plot(interval, meanstepitvl, type = "l", xlab = "Interval", ylab = "Mean Number of Steps across All Days ", main = "Mean Number of Steps across All Days vs. Interval (Without NAs)")
-dev.off()
 ```
 Output the interval with max mean steps across all days
 ```{r, echo = TRUE}
@@ -115,15 +102,8 @@ uniquedate <- unique(newset$date)
 for (t in total) stepsperday <- c(stepsperday, t[[1]])
 ```
 Generate histogram
-```{r, echo = TRUE}
-win.graph(width = 10, height = 4)
+```{r totalvsdatewna, echo = TRUE}
 barplot(stepsperday, main="Histogram of Total Number of Steps vs. Date (Fill NAs)", ylab = "Total Number of Steps", names.arg=uniquedate, cex.names=0.6, cex.axis = 0.6, cex.lab = 1, space=c(0,0), las=2)
-```
-Save the graph in file named as 'totalvsdatewna.png'
-```{r, echo = TRUE}
-png("totalvsdatewna.png", width=640, height=480)
-barplot(stepsperday, main="Histogram of Total Number of Steps vs. Date (Fill NAs)", ylab = "Total Number of Steps", names.arg=uniquedate, cex.names=0.6, cex.axis = 0.6, cex.lab = 1, space=c(0,0), las=2)
-dev.off()
 ```
 Output the mean step and median step across all days
 ```{r, echo = TRUE}
@@ -167,18 +147,9 @@ for(m in meanstepsperitvlwn) meanstepitvlwn <- c(meanstepitvlwn, m[[1]])
 intervalwn <- levels(intervalwn)
 ```
 Display the results
-```{r, echo = TRUE}
+```{r weekdayvsweekend, echo = TRUE}
 par(mfrow=c(2,1), mar = c(5,4,2,1))
 plot(intervalwd, meanstepitvlwd, type = "l", xlab = "Interval", ylab = "Mean Number of Steps (Weekdays)", main = "Mean Number of Steps across All Days vs. Interval (Fill NAs)",cex.axis = 0.8, cex.lab = 1)
 plot(intervalwn, meanstepitvlwn, type = "l", xlab = "Interval", ylab = "Mean Number of Steps (Weekends)", main = "Mean Number of Steps across All Days vs. Interval (Fill NAs)",cex.axis = 0.8, cex.lab = 1)
-```
-Save the graph in 'weekdayvsweekend.png'
-```{r, echo = TRUE}
-png("weekdayvsweekend.png")
-par(mfrow=c(2,1), mar = c(5,4,2,1))
-plot(intervalwd, meanstepitvlwd, type = "l", xlab = "Interval", ylab = "Mean Number of Steps (Weekdays)", main = "Mean Number of Steps across All Days vs. Interval (Fill NAs)",cex.axis = 0.8, cex.lab = 1)
-plot(intervalwn, meanstepitvlwn, type = "l", xlab = "Interval", ylab = "Mean Number of Steps (Weekends)", main = "Mean Number of Steps across All Days vs. Interval (Fill NAs)",cex.axis = 0.8, cex.lab = 1)
-dev.off()
-
 ```
 We can discover that people tend to exercise more in the weekends than weekdays.

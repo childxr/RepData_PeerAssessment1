@@ -83,28 +83,12 @@ uniquedate <- unique(goodata$date)
 Generate the histogram of the total number of steps for each day
 
 ```r
-win.graph(width = 10, height = 4)
 barplot(stepsperday, main = "Histogram of Total Number of Steps vs. Date (Ignore NAs)", 
     ylab = "Total Number of Steps", names.arg = uniquedate, cex.names = 0.8, 
     cex.axis = 0.6, cex.lab = 1, space = c(0, 0), las = 2)
 ```
 
-![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8.png) 
-
-Save the graph, named as 'totalvsdatewthtna.png'
-
-```r
-png("totalvsdatewthtna.png", width = 640, height = 480)
-barplot(stepsperday, main = "Histogram of Total Number of Steps vs. Date (Without NAs)", 
-    ylab = "Total Number of Steps", names.arg = uniquedate, cex.names = 0.8, 
-    cex.axis = 0.6, cex.lab = 1, space = c(0, 0), las = 2)
-dev.off()
-```
-
-```
-## pdf 
-##   2
-```
+![plot of chunk totalvsdatewthtna](figure/totalvsdatewthtna.png) 
 
 Output the mean step and median step across all days
 
@@ -154,21 +138,7 @@ plot(interval, meanstepitvl, type = "l", xlab = "Interval", ylab = "Mean Number 
     main = "Mean Number of Steps across All Days vs. Interval (Without NAs)")
 ```
 
-![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14.png) 
-
-Save the graph, named as 'meanstepvsintervalnna.png'
-
-```r
-png("meanstepvsintervalnna.png")
-plot(interval, meanstepitvl, type = "l", xlab = "Interval", ylab = "Mean Number of Steps across All Days ", 
-    main = "Mean Number of Steps across All Days vs. Interval (Without NAs)")
-dev.off()
-```
-
-```
-## pdf 
-##   2
-```
+![plot of chunk meanstepvsintervalnna](figure/meanstepvsintervalnna.png) 
 
 Output the interval with max mean steps across all days
 
@@ -222,28 +192,12 @@ for (t in total) stepsperday <- c(stepsperday, t[[1]])
 Generate histogram
 
 ```r
-win.graph(width = 10, height = 4)
 barplot(stepsperday, main = "Histogram of Total Number of Steps vs. Date (Fill NAs)", 
     ylab = "Total Number of Steps", names.arg = uniquedate, cex.names = 0.6, 
     cex.axis = 0.6, cex.lab = 1, space = c(0, 0), las = 2)
 ```
 
-![plot of chunk unnamed-chunk-21](figure/unnamed-chunk-21.png) 
-
-Save the graph in file named as 'totalvsdatewna.png'
-
-```r
-png("totalvsdatewna.png", width = 640, height = 480)
-barplot(stepsperday, main = "Histogram of Total Number of Steps vs. Date (Fill NAs)", 
-    ylab = "Total Number of Steps", names.arg = uniquedate, cex.names = 0.6, 
-    cex.axis = 0.6, cex.lab = 1, space = c(0, 0), las = 2)
-dev.off()
-```
-
-```
-## pdf 
-##   2
-```
+![plot of chunk totalvsdatewna](figure/totalvsdatewna.png) 
 
 Output the mean step and median step across all days
 
@@ -317,25 +271,6 @@ plot(intervalwn, meanstepitvlwn, type = "l", xlab = "Interval", ylab = "Mean Num
     cex.lab = 1)
 ```
 
-![plot of chunk unnamed-chunk-27](figure/unnamed-chunk-27.png) 
-
-Save the graph in 'weekdayvsweekend.png'
-
-```r
-png("weekdayvsweekend.png")
-par(mfrow = c(2, 1), mar = c(5, 4, 2, 1))
-plot(intervalwd, meanstepitvlwd, type = "l", xlab = "Interval", ylab = "Mean Number of Steps (Weekdays)", 
-    main = "Mean Number of Steps across All Days vs. Interval (Fill NAs)", cex.axis = 0.8, 
-    cex.lab = 1)
-plot(intervalwn, meanstepitvlwn, type = "l", xlab = "Interval", ylab = "Mean Number of Steps (Weekends)", 
-    main = "Mean Number of Steps across All Days vs. Interval (Fill NAs)", cex.axis = 0.8, 
-    cex.lab = 1)
-dev.off()
-```
-
-```
-## pdf 
-##   2
-```
+![plot of chunk weekdayvsweekend](figure/weekdayvsweekend.png) 
 
 We can discover that people tend to exercise more in the weekends than weekdays.
