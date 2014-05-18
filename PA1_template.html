@@ -317,6 +317,10 @@ maxstepinterval
 <p>Compute the number of missing value</p>
 
 <pre><code class="r">numofmissing &lt;- length(which(is.na(dataset$steps)))
+numofmissing
+</code></pre>
+
+<pre><code>## [1] 2304
 </code></pre>
 
 <p>Fill each NA with the average number of steps for that interval across all days</p>

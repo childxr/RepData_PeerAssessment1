@@ -22,7 +22,7 @@ Thus, take the subset with complete data, stored in goodata
 goodata <- subset(dataset, !is.na(dataset$steps))
 
 ```
-Check the dimision of goodata
+Check the dimensions of goodata
 ```{r, echo = TRUE}
 dim(goodata)
 ```
@@ -76,6 +76,7 @@ maxstepinterval
 Compute the number of missing value
 ```{r, echo = TRUE}
 numofmissing <- length(which(is.na(dataset$steps)))
+numofmissing
 ```
 Fill each NA with the average number of steps for that interval across all days
 ```{r, echo = TRUE}

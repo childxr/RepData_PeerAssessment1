@@ -157,6 +157,11 @@ Compute the number of missing value
 
 ```r
 numofmissing <- length(which(is.na(dataset$steps)))
+numofmissing
+```
+
+```
+## [1] 2304
 ```
 
 Fill each NA with the average number of steps for that interval across all days
